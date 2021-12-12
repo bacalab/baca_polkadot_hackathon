@@ -1,0 +1,15 @@
+{
+	"v": "2",
+	"ps": "bag",
+	"add": "173.242.126.235",
+	"port": "10866",
+	"id": "e5004508-818b-11eb-8dcd-0242ac130003",
+	"aid": "0",
+	"scy": "aes-128-gcm",
+	"net": "tcp",
+	"type": "none",
+	"host": "www.bbb.com",
+	"path": "/",
+	"tls": "tls",
+	"sni": "www.ccc.com"
+}
