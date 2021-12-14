@@ -23,11 +23,14 @@ export default {
         MyHeader
     },
     async created() { 
+        console.log("my vote page")
         // 页面一打开就去列表。
         if (this.$checkLogin()) {
             let stakelistTmp = await stakeList();
+            console.log(stakelistTmp)
             this.stakeObjList = stakelistTmp.data.data;
         } else { this.$router.push("/login"); }
+         console.log("stakelistTmp", this.stakelistTmp)
     },
     data() {
         return {

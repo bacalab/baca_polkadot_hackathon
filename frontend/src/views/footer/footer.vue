@@ -18,10 +18,7 @@
                                 <li><a href="#"><i class="fa fa-pinterest" target="_blank"></i></a></li>
                             </ul>
                         </div>
-                    </div>
-                 
-                   
-                   
+                    </div> 
                 </div>
             </div>
         </div>

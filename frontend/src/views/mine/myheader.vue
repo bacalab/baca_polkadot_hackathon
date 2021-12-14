@@ -4,9 +4,9 @@
         <div class="myname" style="font-size:2em;margin:0.5em;font-weight:800"> {{userObj.name}} </div>
         <div class="bitinfo">
             <div class="parent_nav" style="color:#ffbb00; font-size:2em;font-weight:600">
-                <span class="sub_nav">BCT$</span><span class="sub_nav">{{userObj.total}}</span></div>
-            <div class="parent_nav"><span class="sub_nav">Staked</span><span class="sub_nav">{{userObj.stake}}</span></div>
-            <div class="parent_nav"><span class="sub_nav">Available</span><span class="sub_nav">{{userObj.money}}</span></div>
+                <span class="sub_nav_left">BCT$</span><span class="sub_nav_right">{{userObj.total}}</span></div>
+            <div class="parent_nav"><span class="sub_nav_left">Staked</span><span class="sub_nav_right">{{userObj.stake}}</span></div>
+            <div class="parent_nav"><span class="sub_nav_left">Available</span><span class="sub_nav_right">{{userObj.money}}</span></div>
         </div>
     </div>
 </template>
@@ -14,19 +14,16 @@
 import { userInfo, stakeList } from "@/api/mine.js";
 import { setToken, getToken } from "@/utils/token.js";
 export default {
-    name: 'MyHeader',
-
+    name: 'MyHeader', 
     async created() {
-        // 页面一打开就去列表。 
-      if (this.$checkLogin()) { 
-          let ba = getToken("bacaToken")
-          console.log("bacaToken",ba)
-          var mywallet = getToken("bacaWallet")
-          console.log("bacaWallet",mywallet)
-          let userObjTmp = await userInfo();
-          this.userObj = userObjTmp.data.data;
-          console.log("***********", this.userObj)
-        }else { this.$router.push("/login"); } 
+        console.log(" my MyHeader page")  
+        let ba = getToken("bacaToken")
+        console.log("bacaToken", ba)
+        var mywallet = getToken("bacaWallet")
+        console.log("bacaWallet", mywallet)
+        let userObjTmp = await userInfo();
+        this.userObj = userObjTmp.data.data;
+
 
     },
     data() {
@@ -48,11 +45,18 @@ export default {
 
 }
 
-.sub_nav {
+.sub_nav_left{
     flex: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+    font-weight: 600;
+}
+.sub_nav_right{
+    flex: auto;
+    display: flex;
+    align-items: center;
+    justify-content: right;
     font-weight: 600;
 }
 

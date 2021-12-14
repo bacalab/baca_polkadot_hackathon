@@ -64,9 +64,9 @@
                             <img src="@/assets/img/vote.png" alt="img" style="width:1.5em;margin-left: 14em;" /> {{item.vote}}
                         </div>
                     </div> 
-                    <div class="btn-wrap mt-5 mb-5 text-center">
+                    <!-- <div class="btn-wrap mt-5 mb-5 text-center">
                         <a class="btn btn-main" href="#">Load More</a>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="col-lg-4">
                     <div class="section-title">

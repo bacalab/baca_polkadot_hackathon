@@ -72,9 +72,9 @@ export default {
                 }
                 Notification(options)
                 return
-            }
+            } 
 
-            let res = await userLogin({ "wallet_id": obj.address })
+            let res = await userLogin({ "address": obj.address,"name":obj.meta.name })
             if (res.data && res.data.data.token) {
                 setToken("bacaToken", res.data.data.token)
                 var mes = "Login in seccuss"
@@ -97,9 +97,9 @@ export default {
     width: 50%;
     padding: 3em;
     background-color: #e9e9e9;
-    margin: auto;
-    text-align: center;
-
+    margin:  auto;
+    margin-top:2em;
+    text-align: center; 
     box-shadow: #d5d4d4 1px 1px 2px 2px;
 }
 
