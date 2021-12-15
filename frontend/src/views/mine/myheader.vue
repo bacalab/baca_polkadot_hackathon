@@ -1,12 +1,12 @@
 <template>
     <div class="myheadercontain">
         <img :src="require('./imgs/headimg.png')" border=2 class="myheadimg" />
-        <div class="myname" style="font-size:2em;margin:0.5em;font-weight:800"> {{userObj.name}} </div>
+        <div class="myname" > {{userObj.name}} </div>
         <div class="bitinfo">
             <div class="parent_nav" style="color:#ffbb00; font-size:2em;font-weight:600">
-                <span class="sub_nav_left">BCT$</span><span class="sub_nav_right">{{userObj.total}}</span></div>
+                <span class="sub_nav_left">BCT$</span><span class="sub_nav_right">{{userObj.total.toFixed(4)}}</span></div>
             <div class="parent_nav"><span class="sub_nav_left">Staked</span><span class="sub_nav_right">{{userObj.stake}}</span></div>
-            <div class="parent_nav"><span class="sub_nav_left">Available</span><span class="sub_nav_right">{{userObj.money}}</span></div>
+            <div class="parent_nav"><span class="sub_nav_left">Available</span><span class="sub_nav_right">{{userObj.money.toFixed(4)}}</span></div>
         </div>
     </div>
 </template>
@@ -58,9 +58,7 @@ export default {
     align-items: center;
     justify-content: right;
     font-weight: 600;
-}
-
-
+}  
 .myheadimg {
     width: 7em;
     height: 7em;
@@ -68,5 +66,13 @@ export default {
     background-color: #bebebe;
     padding: 0.5em;
     border: none;
+}
+.myname {
+    font-size:2em;margin:0.5em;font-weight:800
+}  
+
+
+@media only screen and (max-width: 479px) {
+       .bitinfo{width: 80%;}
 }
 </style>

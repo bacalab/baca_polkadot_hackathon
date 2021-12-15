@@ -104,8 +104,7 @@ export default {
 }
 
 .selectbox {
-    text-align: center;
-
+    text-align: center; 
     border: 1px solid #d5d4d4;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;

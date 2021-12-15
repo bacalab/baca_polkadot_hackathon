@@ -91,4 +91,10 @@ export default {
     line-height: 100px;
     text-align: center;
 }
+
+
+@media only screen and (max-width: 479px) {
+   .tab-tilte{font-size: 1em;
+   width: 100%;}
+}
 </style>

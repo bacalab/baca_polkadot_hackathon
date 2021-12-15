@@ -4,9 +4,9 @@
             <div class="personbox" v-for="item in stakeObjList">
                 <div class="sub_box vote_box"><img src="./imgs/vote.png" style="width: 3em;"></div>
                 <div class="sub_box title_box">
-                    <span style="padding-right:2em">{{item.article.title}}</span></div>
+                    <span style="padding:0 2em;">{{item.article.title}}</span></div>
                 <div class="sub_box stake_box">
-                    <span>staked:{{item.stake}} earned:2000</span>
+                    <span v-if>staked:{{item.stake}}</span>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@ export default {
     components: {
         MyHeader
     },
-    async created() { 
+    async created() {
         console.log("my vote page")
         // 页面一打开就去列表。
         if (this.$checkLogin()) {
@@ -30,7 +30,7 @@ export default {
             console.log(stakelistTmp)
             this.stakeObjList = stakelistTmp.data.data;
         } else { this.$router.push("/login"); }
-         console.log("stakelistTmp", this.stakelistTmp)
+        console.log("stakelistTmp", this.stakelistTmp)
     },
     data() {
         return {
@@ -40,20 +40,18 @@ export default {
 }
 </script>
 <style scoped>
-.maincontext {
-    margin-top: 50px;
-
+.personbox:nth-child(even) {
+    background-color: lightgray;
 }
 
-.personbox {
 
+.personbox {
     background-color: #e9e9e9;
     display: flex;
     font-size: 0.2em;
     padding: 3em;
     width: 80%;
     margin: 0 auto;
-
 }
 
 .sub_box {
@@ -66,7 +64,6 @@ export default {
 
 .vote_box {
     width: 10%;
-
 }
 
 .title_box {
@@ -89,12 +86,15 @@ export default {
         width: 100%;
     }
 
-    .sub_box {
-        font-size: 0.2em;
+    .title_box {
+        width: 75%;
     }
 
-    .title_box {
-        width: 5px;
+    .stake_box {
+        width: 15%;
+        font-size: 1em;
+
     }
+
 }
 </style>
